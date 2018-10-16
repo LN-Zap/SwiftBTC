@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SwiftBTC_Example' do
+  pod 'SwiftBTC', :path => '../'
+
+  target 'SwiftBTC_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
