@@ -12,8 +12,8 @@ lane :travis do
   pod_lib_lint
 end
 
-desc "Prepares the framework for release"
-desc "This lane should be run from your local machine, and will push a tag to the remote when finished."
+desc "Releases the framework"
+desc "This lane should be run from your local machine."
 desc " * Verifies the git branch is clean"
 desc " * Ensures the lane is running on the master branch"
 desc " * Pulls the remote to verify the latest the branch is up to date"
@@ -23,10 +23,11 @@ desc " * Commits the changes"
 desc " * Pushes the commited branch"
 desc " * Creates a tag"
 desc " * Pushes the tag"
+desc " * Pushes podspec to pod trunk"
 desc "####Example:"
 desc "```\nfastlane prepare_framework_release version:3.0.0\n```"
 desc ""
-lane :prepare_framework_release do |options|
+lane :release_framework do |options|
   if !options[:version] 
     UI.user_error!("No version specified!") 
   end
@@ -60,38 +61,7 @@ lane :prepare_framework_release do |options|
 
   # push the tag
   push_git_tags()
-end
 
-desc "Completes the framework release"
-desc "This lane should be from a CI machine, after the tests have passed on the tag build. This lane does the following:"
-desc " * Verifies the git branch is clean"
-desc " * Ensures the lane is running on the master branch"
-desc " * Pulls the remote to verify the latest the branch is up to date"
-desc " * Generates a changelog for the Github Release"
-desc " * Creates a Github Release"
-desc " * Builds Carthage Frameworks"
-desc " * Uploads Carthage Framework to Github Release"
-desc " * Pushes podspec to pod trunk"
-desc " * Lints the pod spec to ensure it is valid"
-desc ""
-lane :complete_framework_release do
-  if !is_ci
-    UI.user_error!("#{lane_context[SharedValues::LANE_NAME]} should be run from a CI machine.") 
-  end
-  
-  version = last_git_tag.strip
-  UI.message("Using version #{version}")
-  
-  #Ensure clean branch  
-  ensure_git_status_clean
-  
-  #Ensure we are on the right branch
-  ensure_git_branch(branch: "master")
-  
-  #Pull the latest to ensure we are up to date
-  sh("git pull origin master")
-  
   #pod trunk push
   pod_push
 end
-

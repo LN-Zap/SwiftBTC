@@ -20,13 +20,13 @@ or alternatively using `brew cask install fastlane`
 fastlane travis
 ```
 
-### prepare_framework_release
+### release_framework
 ```
-fastlane prepare_framework_release
+fastlane release_framework
 ```
-Prepares the framework for release
+Releases the framework
 
-This lane should be run from your local machine, and will push a tag to the remote when finished.
+This lane should be run from your local machine.
 
  * Verifies the git branch is clean
 
@@ -46,38 +46,13 @@ This lane should be run from your local machine, and will push a tag to the remo
 
  * Pushes the tag
 
+ * Pushes podspec to pod trunk
+
 ####Example:
 
 ```
 fastlane prepare_framework_release version:3.0.0
 ```
-
-
-### complete_framework_release
-```
-fastlane complete_framework_release
-```
-Completes the framework release
-
-This lane should be from a CI machine, after the tests have passed on the tag build. This lane does the following:
-
- * Verifies the git branch is clean
-
- * Ensures the lane is running on the master branch
-
- * Pulls the remote to verify the latest the branch is up to date
-
- * Generates a changelog for the Github Release
-
- * Creates a Github Release
-
- * Builds Carthage Frameworks
-
- * Uploads Carthage Framework to Github Release
-
- * Pushes podspec to pod trunk
-
- * Lints the pod spec to ensure it is valid
 
 
 
