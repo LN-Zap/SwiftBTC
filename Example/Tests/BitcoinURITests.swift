@@ -1,5 +1,5 @@
 //
-//  BTCUtilTests
+//  SwiftBTC_Tests
 //
 //  Created by Otto Suess on 10.04.18.
 //  Copyright © 2018 Zap. All rights reserved.
