@@ -8,12 +8,7 @@ notifications:
     on_success: never
     on_failure: change
 cache: cocoapods
-podfile: Example/Podfile
-before_install:
-  - gem install cocoapods
-  - pod install --repo-update --project-directory=Example
 install:
   - bundle install
 script:
-  - bundle exec fastlane test_framework
-  - pod lib lint
+  - bundle exec fastlane travis

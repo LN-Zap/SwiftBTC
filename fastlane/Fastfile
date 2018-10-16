@@ -1,8 +1,13 @@
 default_platform(:ios)
 
-lane :test_framework do
+lane :travis do
+  cocoapods(
+    repo_update: true,
+    podfile: "./Example/"
+  )
   run_tests(
     workspace: "Example/SwiftBTC.xcworkspace",
     scheme: "SwiftBTC-Example"
   )
+  pod_lib_lint
 end
