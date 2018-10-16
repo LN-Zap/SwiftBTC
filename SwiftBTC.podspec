@@ -27,5 +27,5 @@ Network, p2pkh, p2sh & bech32 bitcoin addresses, bip-0021 URI scheme for making 
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'BigInt', '~> 3.0'
+  s.dependency 'BigInt', '~> 3.1'
 end
