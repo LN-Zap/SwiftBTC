@@ -1,0 +1,8 @@
+default_platform(:ios)
+
+lane :test_framework do
+  run_tests(
+    workspace: "Example/SwiftBTC.xcworkspace",
+    scheme: "SwiftBTC-Example"
+  )
+end
