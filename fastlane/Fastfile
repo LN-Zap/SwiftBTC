@@ -25,7 +25,7 @@ desc " * Creates a tag"
 desc " * Pushes the tag"
 desc " * Pushes podspec to pod trunk"
 desc "####Example:"
-desc "```\nfastlane prepare_framework_release version:3.0.0\n```"
+desc "```\nfastlane release_framework version:3.0.0\n```"
 desc ""
 lane :release_framework do |options|
   if !options[:version] 

@@ -51,7 +51,7 @@ This lane should be run from your local machine.
 ####Example:
 
 ```
-fastlane prepare_framework_release version:3.0.0
+fastlane release_framework version:3.0.0
 ```
 
 
