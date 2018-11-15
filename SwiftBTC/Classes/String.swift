@@ -9,7 +9,7 @@ import Foundation
 
 public extension String {    
     public func sha256() -> String {
-        return data(using: .utf8)?.sha256().hexString() ?? ""
+        return data(using: .utf8)?.sha256.hexadecimalString ?? ""
     }
 
     func indexDistance(of character: Character) -> Int? {
