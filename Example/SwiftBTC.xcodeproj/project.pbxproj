@@ -20,7 +20,9 @@
 		AD2E45662176292400EAD3C4 /* BitcoinURITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2E45082176227C00EAD3C4 /* BitcoinURITests.swift */; };
 		AD2E45672176292400EAD3C4 /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2E450B2176227C00EAD3C4 /* CryptoTests.swift */; };
 		AD2E45682176292400EAD3C4 /* LegacyBitcoinAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2E45092176227C00EAD3C4 /* LegacyBitcoinAddressTests.swift */; };
-		AD2E45692176292400EAD3C4 /* SatoshiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2E450A2176227C00EAD3C4 /* SatoshiTests.swift */; };
+		AD2E45692176292400EAD3C4 /* SatoshiFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2E450A2176227C00EAD3C4 /* SatoshiFormatterTests.swift */; };
+		ADEB619A221324EF009D5707 /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEB6199221324EF009D5707 /* CurrencyConverterTests.swift */; };
+		ADFDF9FF2212EB27009010BC /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFDF9FE2212EB27009010BC /* CurrencyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +54,11 @@
 		AD2E45072176227C00EAD3C4 /* Bip39Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bip39Tests.swift; sourceTree = "<group>"; };
 		AD2E45082176227C00EAD3C4 /* BitcoinURITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinURITests.swift; sourceTree = "<group>"; };
 		AD2E45092176227C00EAD3C4 /* LegacyBitcoinAddressTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegacyBitcoinAddressTests.swift; sourceTree = "<group>"; };
-		AD2E450A2176227C00EAD3C4 /* SatoshiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SatoshiTests.swift; sourceTree = "<group>"; };
+		AD2E450A2176227C00EAD3C4 /* SatoshiFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SatoshiFormatterTests.swift; sourceTree = "<group>"; };
 		AD2E450B2176227C00EAD3C4 /* CryptoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
 		AD2E450C2176227C00EAD3C4 /* Base58Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base58Tests.swift; sourceTree = "<group>"; };
+		ADEB6199221324EF009D5707 /* CurrencyConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterTests.swift; sourceTree = "<group>"; };
+		ADFDF9FE2212EB27009010BC /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
 		C910E772093D34C82E5DD47E /* Pods-SwiftBTC_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBTC_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBTC_Example/Pods-SwiftBTC_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DA20E0EE398ACD68715816BC /* SwiftBTC.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftBTC.podspec; path = ../SwiftBTC.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ED7952DCB245DA04245A1FDE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -152,8 +156,10 @@
 				AD2E45072176227C00EAD3C4 /* Bip39Tests.swift */,
 				AD2E45082176227C00EAD3C4 /* BitcoinURITests.swift */,
 				AD2E450B2176227C00EAD3C4 /* CryptoTests.swift */,
+				ADEB6199221324EF009D5707 /* CurrencyConverterTests.swift */,
+				ADFDF9FE2212EB27009010BC /* CurrencyTests.swift */,
 				AD2E45092176227C00EAD3C4 /* LegacyBitcoinAddressTests.swift */,
-				AD2E450A2176227C00EAD3C4 /* SatoshiTests.swift */,
+				AD2E450A2176227C00EAD3C4 /* SatoshiFormatterTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -365,11 +371,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADFDF9FF2212EB27009010BC /* CurrencyTests.swift in Sources */,
 				AD2E45642176292400EAD3C4 /* Bech32Tests.swift in Sources */,
 				AD2E45632176292400EAD3C4 /* Base58Tests.swift in Sources */,
-				AD2E45692176292400EAD3C4 /* SatoshiTests.swift in Sources */,
+				AD2E45692176292400EAD3C4 /* SatoshiFormatterTests.swift in Sources */,
 				AD2E45652176292400EAD3C4 /* Bip39Tests.swift in Sources */,
 				AD2E45662176292400EAD3C4 /* BitcoinURITests.swift in Sources */,
+				ADEB619A221324EF009D5707 /* CurrencyConverterTests.swift in Sources */,
 				AD2E45682176292400EAD3C4 /* LegacyBitcoinAddressTests.swift in Sources */,
 				AD2E45672176292400EAD3C4 /* CryptoTests.swift in Sources */,
 			);
