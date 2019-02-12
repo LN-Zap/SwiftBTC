@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.swift_version    = '4.2'
   s.name             = 'SwiftBTC'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.summary          = 'Bitcoin specific convenience functions and types.'
   s.description      = <<-DESC
 Network, p2pkh, p2sh & bech32 bitcoin addresses, bip-0021 URI scheme for making Bitcoin payments, Satoshi number type, Currency type
