@@ -6,8 +6,8 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import XCTest
 import SwiftBTC
+import XCTest
 
 final class CurrencyTests: XCTestCase {
     private let usd = FiatCurrency(currencyCode: "USD", symbol: "$", localized: "US Dollar", exchangeRate: 7000.00)

@@ -8,7 +8,7 @@
 import Foundation
 
 public enum CurrencyConverter {
-    public static func convert(amount: Decimal, from: Currency, to: Currency) -> Decimal {
-        return amount / from.exchangeRate * to.exchangeRate
+    public static func convert(amount: Decimal, from fromCurrency: Currency, to toCurrency: Currency) -> Decimal {
+        return amount / fromCurrency.exchangeRate * toCurrency.exchangeRate
     }
 }
