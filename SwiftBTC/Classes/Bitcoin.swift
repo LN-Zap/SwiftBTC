@@ -7,8 +7,6 @@
 
 import Foundation
 
-public typealias Satoshi = Decimal
-
 public enum Bitcoin: String, Equatable, Codable, CaseIterable {
     case bitcoin
     case milliBitcoin
