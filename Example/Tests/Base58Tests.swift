@@ -26,18 +26,18 @@ final class Base58Tests: XCTestCase {
             ("3yxU3u1igY8WkgtjK92fbJQCd4BZiiT1v25f", "abcdefghijklmnopqrstuvwxyz"),
             ("3sN2THZeE9Eh9eYrwkvZqNstbHGvrxSAM7gXUXvyFQP8XvQLUqNCS27icwUeDT7ckHm4FUHM2mTVh1vbLmk7y", "00000000000000000000000000000000000000000000000000000000000000")
         ]
-        
+
         for (base58, output) in valid {
             let data = Data(base58Encoded: base58)
             XCTAssertNotNil(data)
             XCTAssertEqual(String(data: data!, encoding: .utf8), output)
-            
+
             let encoded = data?.base58EncodedString()
             XCTAssertNotNil(encoded)
             XCTAssertEqual(base58, encoded)
         }
     }
-    
+
     func testInvalidBase58() {
         let invalid = [
             "0",
@@ -50,13 +50,13 @@ final class Base58Tests: XCTestCase {
             "4kl8",
             "0OIl",
             "!@#$%^&*()-_=+~`"]
-        
+
         for base58 in invalid {
             let data = Data(base58Encoded: base58)
             XCTAssertNil(data)
         }
     }
-    
+
     func testValidBase58Check() {
         let decodeTests: [(String, (Int, String)?)] = [
             ("3MNQE1X", (20, "")),
@@ -71,7 +71,7 @@ final class Base58Tests: XCTestCase {
             ("K2RYDcKfupxwXdWhSAxQPCeiULntKm63UXyx5MvEH2", (20, "abcdefghijklmnopqrstuvwxyz")),
             ("bi1EWXwJay2udZVxLJozuTb8Meg4W9c6xnmJaRDjg6pri5MBAxb9XwrpQXbtnqEoRV5U2pixnFfwyXC8tRAVC8XxnjK", (20, "00000000000000000000000000000000000000000000000000000000000000"))
         ]
-        
+
         for (input, output) in decodeTests {
             let result = Base58.checkDecode(input)
             XCTAssertNotNil(result)
@@ -79,13 +79,13 @@ final class Base58Tests: XCTestCase {
                 let (expectedVersion, expectedPayload) = output {
                 XCTAssertEqual(version, expectedVersion)
                 XCTAssertEqual(String(data: payload, encoding: .utf8), expectedPayload)
-                
+
                 let encoded = Base58.checkEncode(payload, version: version)
                 XCTAssertEqual(encoded, input)
             }
         }
     }
-    
+
     func testInvalidBase58Check() {
         let decodeTests: [String] = [
             "1HbfPXavLn1fyB8dAf4Nv6whphZ7P4NsYQ",
@@ -93,11 +93,11 @@ final class Base58Tests: XCTestCase {
             "",
             "1234"
         ]
-        
+
         for input in decodeTests {
             let result = Base58.checkDecode(input)
             XCTAssertNil(result)
-            
+
         }
     }
 }

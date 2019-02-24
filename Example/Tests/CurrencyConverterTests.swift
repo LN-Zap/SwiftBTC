@@ -21,12 +21,12 @@ class CurrencyConverterTests: XCTestCase {
             (1, .milliBitcoin, 100000),
             (1, .bitcoin, 100000000)
         ]
-        
+
         for (input, unit, satoshis) in data {
             XCTAssertEqual(CurrencyConverter.convert(amount: input, from: unit, to: Bitcoin.satoshi), satoshis)
         }
     }
-    
+
     func testSatoshiToX() {
         let data: [(Bitcoin, Satoshi, Decimal)] = [
             (.bitcoin, 100_000_000, 1),
@@ -38,7 +38,7 @@ class CurrencyConverterTests: XCTestCase {
             (.bitcoin, 100, 0.000001),
             (.bitcoin, 10, 0.0000001),
             (.bitcoin, 1, 0.00000001),
-            
+
             (.bit, 100_000_000, 1_000_000),
             (.bit, 10_000_000, 100_000),
             (.bit, 1_000_000, 10_000),
@@ -48,7 +48,7 @@ class CurrencyConverterTests: XCTestCase {
             (.bit, 100, 1),
             (.bit, 10, 0.1),
             (.bit, 1, 0.01),
-            
+
             (.satoshi, 100_000_000, 100_000_000),
             (.satoshi, 10_000_000, 10_000_000),
             (.satoshi, 1_000_000, 1_000_000),

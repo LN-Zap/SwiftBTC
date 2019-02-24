@@ -16,7 +16,7 @@ private extension Network {
             return 0x00 // starts with 1
         }
     }
-    
+
     var scriptHashAddressID: Int {
         switch self {
         case .testnet, .regtest:
@@ -34,46 +34,46 @@ public struct BitcoinAddress: Codable, Equatable, Hashable {
         case p2sh
         case bech32
     }
-    
+
     public let string: String
     public let network: Network
     public let type: AddressType
-    
+
     public init?(witnessPubKeyHash: Data, network: Network) {
         guard
             witnessPubKeyHash.count == 20,
             let address = Bech32Address(network: network, witnessVersion: 0x00, witnessProgram: witnessPubKeyHash)?.string
             else { return nil }
-        
+
         self.network = network
         self.string = address
         self.type = .bech32
     }
-    
+
     public init?(witnessScriptHash: Data, network: Network) {
         guard
             witnessScriptHash.count == 32,
             let address = Bech32Address(network: network, witnessVersion: 0x00, witnessProgram: witnessScriptHash)?.string
             else { return nil }
-        
+
         self.network = network
         self.string = address
         self.type = .bech32
     }
-    
+
     public init?(pubKeyHash: Data, network: Network) {
         guard pubKeyHash.count == 20 else { return nil }
         self.network = network
         self.type = .p2pkh
         self.string = Base58.checkEncode(pubKeyHash, version: network.pubKeyHashAddressID)
     }
-    
+
     public init?(scriptHashFromHash: Data, network: Network) {
         self.network = network
         self.type = .p2sh
         self.string = Base58.checkEncode(scriptHashFromHash, version: network.scriptHashAddressID)
     }
-    
+
     public init?(string: String) {
         if let legacyAddress = LegacyBitcoinAddress(string: string) {
             switch legacyAddress.type {
@@ -84,7 +84,7 @@ public struct BitcoinAddress: Codable, Equatable, Hashable {
             default:
                 return nil
             }
-            
+
             network = legacyAddress.network
         } else if let bech32Address = Bech32Address(string: string) {
             type = .bech32
@@ -93,28 +93,28 @@ public struct BitcoinAddress: Codable, Equatable, Hashable {
         } else {
             return nil
         }
-        
+
         self.string = string
     }
-    
+
     // MARK: Codable
-    
+
     enum CodingKeys: String, CodingKey {
         case string
     }
-    
+
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         string = try values.decode(String.self, forKey: .string)
-        
+
         guard let address = BitcoinAddress(string: string) else {
             throw DecodingError.dataCorruptedError(in: try decoder.singleValueContainer(), debugDescription: "Invalid Bitcoin Address")
         }
-        
+
         self.network = address.network
         self.type = address.type
     }
-    
+
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(string, forKey: .string)

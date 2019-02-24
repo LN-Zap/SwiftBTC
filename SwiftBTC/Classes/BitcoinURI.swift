@@ -20,7 +20,7 @@ public struct BitcoinURI: PaymentURI {
         static let message = "message"
         static let lightning = "lightning"
     }
-    
+
     public let bitcoinAddress: BitcoinAddress
     public var address: String { return bitcoinAddress.string }
     public var network: Network { return bitcoinAddress.network }
@@ -28,11 +28,11 @@ public struct BitcoinURI: PaymentURI {
     public let amount: Satoshi?
     public let memo: String?
     public let lightningFallback: String?
-    
+
     public var uriString: String {
         var urlComponents = URLComponents(string: "bitcoin:\(address)")
         var queryItems = [URLQueryItem]()
-        
+
         if let amount = amount, amount > 0 {
             let amountInBitcoin = CurrencyConverter.convert(amount: amount, from: Bitcoin.satoshi, to: Bitcoin.bitcoin)
             let usLocale = Locale(identifier: "en_US")
@@ -48,10 +48,10 @@ public struct BitcoinURI: PaymentURI {
         if !queryItems.isEmpty {
             urlComponents?.queryItems = queryItems
         }
-        
+
         return urlComponents?.string ?? "bitcoin:\(address)"
     }
-    
+
     public init?(string: String) {
         let string = string.trimmingCharacters(in: .whitespacesAndNewlines)
         guard
@@ -68,13 +68,13 @@ public struct BitcoinURI: PaymentURI {
         } else {
             amount = nil
         }
-        
+
         let memo = components.queryItem(name: Constants.message)
         let lightningFallback = components.queryItem(name: Constants.lightning)
-        
+
         self.init(address: address, amount: amount, memo: memo, lightningFallback: lightningFallback)
     }
-    
+
     public init?(address: BitcoinAddress, amount: Satoshi?, memo: String?, lightningFallback: String?) {
         self.bitcoinAddress = address
         self.amount = amount

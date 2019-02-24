@@ -13,7 +13,7 @@ public enum Bip39 {
     private static let wordList: [String] = {
         bip39Words.components(separatedBy: "\n")
     }()
-    
+
     public static func contains(_ word: String) -> Bool {
         return wordList.contains(word)
     }

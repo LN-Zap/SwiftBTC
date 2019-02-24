@@ -18,13 +18,13 @@ final class Bech32Tests: XCTestCase {
             "11qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqc8247j",
             "split1checkupstagehandshakeupstreamerranterredcaperred2y9e3w"
         ]
-        
+
         for input in valid {
             let decoded = Bech32.decode(input)
             XCTAssertNotNil(decoded)
         }
     }
-    
+
     func testInvalidBech32() {
         let invalid = [
             "\u{20}1nwldj5",
@@ -40,7 +40,7 @@ final class Bech32Tests: XCTestCase {
             "10a06t8",
             "1qzzfhee"
         ]
-        
+
         for input in invalid {
             let decoded = Bech32.decode(input)
             XCTAssertNil(decoded)

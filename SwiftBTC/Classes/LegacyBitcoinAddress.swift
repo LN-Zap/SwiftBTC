@@ -16,25 +16,25 @@ struct LegacyBitcoinAddress {
         case testnetScriptHash = 196
         case testnetPrivateKey = 239
     }
-    
+
     enum AddressType {
         case pubkeyHash
         case scriptHash
         case privateKey
     }
-    
+
     let string: String
     let network: Network
     let type: AddressType
-    
+
     init?(string: String) {
         guard
             let (version, _) = Base58.checkDecode(string),
             let typeVersion = AddressTypeVersion(rawValue: version)
             else { return nil }
-        
+
         self.string = string
-        
+
         switch typeVersion {
         case .pubkeyHash:
             type = .pubkeyHash

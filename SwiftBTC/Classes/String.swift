@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension String {    
+public extension String {
     public func sha256() -> String {
         return data(using: .utf8)?.sha256.hexadecimalString ?? ""
     }

@@ -16,7 +16,7 @@ public extension Satoshi {
         NSDecimalRound(&result, &value, 0, .bankers)
         return result
     }
-    
+
     public var int64: Int64 {
         return Int64(truncating: self.rounded() as NSDecimalNumber)
     }

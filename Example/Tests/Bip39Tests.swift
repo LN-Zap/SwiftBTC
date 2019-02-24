@@ -14,7 +14,7 @@ class Bip39Tests: XCTestCase {
         XCTAssertTrue(Bip39.contains("peasant"))
         XCTAssertTrue(Bip39.contains("zoo"))
     }
-    
+
     func testInvalidWord() {
         XCTAssertFalse(Bip39.contains("bier"))
         XCTAssertFalse(Bip39.contains(""))

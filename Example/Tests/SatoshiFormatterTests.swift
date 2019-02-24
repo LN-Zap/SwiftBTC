@@ -40,7 +40,7 @@ final class SatoshiFormatterTests: XCTestCase {
             XCTAssertEqual(formatter.string(from: satoshis), string)
         }
     }
-    
+
     func testSatoshiParsing() {
         for (unit, satoshis, string) in inputs {
             let formatter = SatoshiFormatter(unit: unit)
@@ -48,7 +48,7 @@ final class SatoshiFormatterTests: XCTestCase {
             XCTAssertEqual(formatter.satoshis(from: string), satoshis, "(\(unit), \(satoshis), \(string))")
         }
     }
-    
+
     func testMilliSatoshiParsing() {
         let msat: [(Bitcoin, Satoshi, String)] = [
             (.satoshi, 1.1, "1.1"),
@@ -60,7 +60,7 @@ final class SatoshiFormatterTests: XCTestCase {
             (.bitcoin, 1.9, "0.000000019"),
             (.bitcoin, 0.9, "0.000000009")
         ]
-        
+
         for (unit, satoshis, string) in msat {
             let formatter = SatoshiFormatter(unit: unit)
             formatter.includeCurrencySymbol = false
@@ -68,7 +68,7 @@ final class SatoshiFormatterTests: XCTestCase {
             XCTAssertEqual(formatter.satoshis(from: string), satoshis, string)
         }
     }
-    
+
     func testWithoutCommas() {
         let noCommas: [(Bitcoin, Satoshi, String)] = [
             (.satoshi, 1000, "1000"),
@@ -77,7 +77,7 @@ final class SatoshiFormatterTests: XCTestCase {
             (.bitcoin, 100000000000, "1000.0"),
             (.bitcoin, 100000000008, "1000.00000008")
         ]
-        
+
         for (unit, satoshis, string) in noCommas {
             let formatter = SatoshiFormatter(unit: unit)
             formatter.includeCurrencySymbol = false
@@ -85,7 +85,7 @@ final class SatoshiFormatterTests: XCTestCase {
             XCTAssertEqual(formatter.satoshis(from: string), satoshis)
         }
     }
-    
+
     func testStringValue() {
         let inputs: [(Bitcoin, Satoshi, String)] = [
             (.satoshi, 1, "1"),
@@ -109,7 +109,7 @@ final class SatoshiFormatterTests: XCTestCase {
             (.bitcoin, 100000000000, "1000"),
             (.bitcoin, 100000000008, "1000.00000008")
         ]
-        
+
         for (unit, satoshis, string) in inputs {
             let formatter = SatoshiFormatter(unit: unit)
             formatter.usesGroupingSeparator = false

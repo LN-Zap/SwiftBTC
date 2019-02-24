@@ -22,14 +22,14 @@ final class LegacyBitcoinAddressTests: XCTestCase {
             ("17NdbrSGoUotzeGCcMMCqnFkEvLymoou9j", .pubkeyHash, .mainnet),
             ("1Q1pE5vPGEEMqRcVRMbtBK842Y6Pzo6nK9", .pubkeyHash, .mainnet)
         ]
-        
+
         for (input, type, network) in tests {
             let address = LegacyBitcoinAddress(string: input)
             XCTAssertEqual(address?.type, type)
             XCTAssertEqual(address?.network, network)
         }
     }
-    
+
     func testInvalidAddresses() {
         let invalid = [
             "1badbadbadbadbadbadbadbadbadbadbad",
@@ -37,7 +37,7 @@ final class LegacyBitcoinAddressTests: XCTestCase {
             "1ANNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i",
             "1A Na15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i"
         ]
-        
+
         for input in invalid {
             XCTAssertNil(LegacyBitcoinAddress(string: input))
         }

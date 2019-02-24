@@ -27,7 +27,7 @@ extension Bitcoin: Currency {
             return "sat"
         }
     }
-    
+
     public var exchangeRate: Decimal {
         switch self {
         case .bitcoin:
@@ -40,27 +40,27 @@ extension Bitcoin: Currency {
             return 100000000
         }
     }
-    
+
     // MARK: Unit Conversion
-    
+
     public func value(satoshis: Satoshi) -> Decimal? {
         return CurrencyConverter.convert(amount: satoshis, from: Bitcoin.satoshi, to: self)
     }
-    
+
     // MARK: String formatting
-    
+
     public func format(satoshis: Satoshi) -> String? {
         let formatter = SatoshiFormatter(unit: self)
         formatter.includeCurrencySymbol = true
         return formatter.string(from: satoshis)
     }
-    
+
     public func satoshis(from string: String) -> Satoshi? {
         let formatter = SatoshiFormatter(unit: self)
         formatter.includeCurrencySymbol = true
         return formatter.satoshis(from: string)
     }
-    
+
     public func stringValue(satoshis: Satoshi) -> String? {
         let formatter = SatoshiFormatter(unit: self)
         formatter.includeCurrencySymbol = false
