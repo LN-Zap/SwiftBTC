@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Decimal {
-    public func absoluteValue() -> Decimal {
+    func absoluteValue() -> Decimal {
         if self < 0 {
             return self * -1
         } else {

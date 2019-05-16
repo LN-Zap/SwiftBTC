@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Bitcoin {
-    public var minimumFractionDigits: Int {
+    var minimumFractionDigits: Int {
         switch self {
         case .bit:
             return 2
@@ -19,7 +19,7 @@ public extension Bitcoin {
         }
     }
 
-    public var maximumFractionDigits: Int {
+    var maximumFractionDigits: Int {
         switch self {
         case .bitcoin:
             return 8

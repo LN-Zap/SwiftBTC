@@ -21,13 +21,13 @@ public extension Data {
         return Data(hash)
     }
 
-    public var hexadecimalString: String {
+    var hexadecimalString: String {
         return reduce("") { $0 + String(format: "%02x", UInt8($1)) }
     }
 
     // ConvertBits converts a byte slice where each byte is encoding fromBits bits,
     // to a byte slice where each byte is encoding toBits bits.
-    public func convertBits(fromBits: Int, toBits: Int, pad: Bool) -> Data? {
+    func convertBits(fromBits: Int, toBits: Int, pad: Bool) -> Data? {
         var acc: Int = 0
         var bits: Int = 0
         var result = Data()
