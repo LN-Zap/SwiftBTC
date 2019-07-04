@@ -21,6 +21,7 @@
 		AD2E45672176292400EAD3C4 /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2E450B2176227C00EAD3C4 /* CryptoTests.swift */; };
 		AD2E45682176292400EAD3C4 /* LegacyBitcoinAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2E45092176227C00EAD3C4 /* LegacyBitcoinAddressTests.swift */; };
 		AD2E45692176292400EAD3C4 /* SatoshiFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2E450A2176227C00EAD3C4 /* SatoshiFormatterTests.swift */; };
+		AD3DDF5A22CE34640031BFC8 /* Bolt11Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3DDF5822CE34370031BFC8 /* Bolt11Tests.swift */; };
 		ADEB619A221324EF009D5707 /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEB6199221324EF009D5707 /* CurrencyConverterTests.swift */; };
 		ADFDF9FF2212EB27009010BC /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFDF9FE2212EB27009010BC /* CurrencyTests.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		AD2E450A2176227C00EAD3C4 /* SatoshiFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SatoshiFormatterTests.swift; sourceTree = "<group>"; };
 		AD2E450B2176227C00EAD3C4 /* CryptoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
 		AD2E450C2176227C00EAD3C4 /* Base58Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base58Tests.swift; sourceTree = "<group>"; };
+		AD3DDF5822CE34370031BFC8 /* Bolt11Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bolt11Tests.swift; sourceTree = "<group>"; };
 		ADEB6199221324EF009D5707 /* CurrencyConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterTests.swift; sourceTree = "<group>"; };
 		ADFDF9FE2212EB27009010BC /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
 		C910E772093D34C82E5DD47E /* Pods-SwiftBTC_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBTC_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBTC_Example/Pods-SwiftBTC_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				AD2E44F6217620FD00EAD3C4 /* Bech32Tests.swift */,
 				AD2E45072176227C00EAD3C4 /* Bip39Tests.swift */,
 				AD2E45082176227C00EAD3C4 /* BitcoinURITests.swift */,
+				AD3DDF5822CE34370031BFC8 /* Bolt11Tests.swift */,
 				AD2E450B2176227C00EAD3C4 /* CryptoTests.swift */,
 				ADEB6199221324EF009D5707 /* CurrencyConverterTests.swift */,
 				ADFDF9FE2212EB27009010BC /* CurrencyTests.swift */,
@@ -250,6 +253,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
@@ -370,6 +374,7 @@
 			files = (
 				ADFDF9FF2212EB27009010BC /* CurrencyTests.swift in Sources */,
 				AD2E45642176292400EAD3C4 /* Bech32Tests.swift in Sources */,
+				AD3DDF5A22CE34640031BFC8 /* Bolt11Tests.swift in Sources */,
 				AD2E45632176292400EAD3C4 /* Base58Tests.swift in Sources */,
 				AD2E45692176292400EAD3C4 /* SatoshiFormatterTests.swift in Sources */,
 				AD2E45652176292400EAD3C4 /* Bip39Tests.swift in Sources */,
