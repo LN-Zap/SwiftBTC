@@ -27,8 +27,6 @@ DerivedData
 
 Carthage/Build
 
-Example/Pods/
-
 # fastlane specific
 fastlane/report.xml
 fastlane/Preview.html
