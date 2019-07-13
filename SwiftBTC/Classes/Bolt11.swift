@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftBTC
 
 extension Bolt11.Invoice {
     init(network: Network, date: Date) {
