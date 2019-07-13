@@ -11,4 +11,5 @@ public enum Network: String, Codable, CaseIterable {
     case regtest
     case testnet
     case mainnet
+    case simnet
 }

@@ -73,7 +73,8 @@ final class BitcoinURITests: XCTestCase {
             ("bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4", .mainnet),
             ("bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3", .mainnet),
             ("tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx", .testnet),
-            ("tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7", .testnet)
+            ("tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7", .testnet),
+            ("sb1qa070c6yumz6e94vphqjn5tatzuj06ejqp2vzvt", .simnet)
         ]
 
         for (uri, network) in tests {

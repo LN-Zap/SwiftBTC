@@ -104,7 +104,16 @@ class Bolt11Tests: XCTestCase {
                 description: nil,
                 expiry: nil,
                 fallbackAddress: BitcoinAddress(string: "bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3")!)
-            )
+            ),("lnsb20u1pwjjuzxhp58yjmdan79s6qqdhdzgynm4zwqd5d7xmw5fk98klysy043l2ahrqspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqxqrrsscqpf7qsm9eaux5f7fv2qahh3f5wp53qzu83vt8rcxpd99emnkqludv8jy44wa20y9yf38k5zcww7dk8cccvk8t96auhsl99tecarltaz50gpxk9028",
+             Bolt11.Invoice(
+                network: .simnet,
+                date: Date(timeIntervalSince1970: 1562996806),
+                paymentHash: paymentHash,
+                amount: 2000,
+                description: nil,
+                expiry: 3600,
+                fallbackAddress: nil)
+            ),
         ]
 
         for (input, output) in data {
