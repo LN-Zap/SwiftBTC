@@ -117,7 +117,7 @@ class Bolt11Tests: XCTestCase {
         ]
 
         for (input, output) in data {
-            let decoded = Bolt11().decode(string: input)
+            let decoded = Bolt11.decode(string: input)
             XCTAssertEqual(decoded, output)
         }
     }
