@@ -10,6 +10,8 @@ import Foundation
 private extension Network {
     var pubKeyHashAddressID: Int {
         switch self {
+        case .simnet:
+            return 0x3f // starts with S
         case .testnet, .regtest:
             return 0x6f // starts with m or n
         case .mainnet:
@@ -19,6 +21,8 @@ private extension Network {
 
     var scriptHashAddressID: Int {
         switch self {
+        case .simnet:
+            return 0x7b // starts with s
         case .testnet, .regtest:
             return 0xc4 // starts with 2
         case .mainnet:

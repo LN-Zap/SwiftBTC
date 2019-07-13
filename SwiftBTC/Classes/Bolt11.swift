@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftBTC
 
 extension Bolt11.Invoice {
     init(network: Network, date: Date) {
@@ -30,6 +29,7 @@ public enum Bolt11 {
         case lnbc
         case lntb
         case lnbcrt
+        case lnsb
 
         static func forNetwork(_ network: Network) -> Prefix {
             switch network {
@@ -39,6 +39,8 @@ public enum Bolt11 {
                 return .lntb
             case .mainnet:
                 return .lnbc
+            case .simnet:
+                return .lnsb
             }
         }
     }
@@ -211,6 +213,8 @@ public enum Bolt11 {
             return .mainnet
         } else if humanReadablePart.starts(with: Prefix.forNetwork(.testnet).rawValue) {
             return .testnet
+        } else if humanReadablePart.starts(with: Prefix.forNetwork(.simnet).rawValue) {
+            return .simnet
         }
         return nil
     }

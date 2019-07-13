@@ -16,6 +16,8 @@ private extension Network {
             return "tb"
         case .mainnet:
             return "bc"
+        case .simnet:
+            return "sb"
         }
     }
 }
@@ -31,6 +33,8 @@ struct Bech32Address {
             network = .testnet
         } else if humanReadablePart.lowercased() == Network.mainnet.bech32Prefix {
             network = .mainnet
+        } else if humanReadablePart.lowercased() == Network.simnet.bech32Prefix {
+            network = .simnet
         } else {
             return nil
         }
