@@ -25,13 +25,13 @@ public enum Bolt11 {
         public var fallbackAddress: BitcoinAddress?
     }
 
-    private enum Prefix: String {
+    public enum Prefix: String {
         case lnbc
         case lntb
         case lnbcrt
         case lnsb
 
-        static func forNetwork(_ network: Network) -> Prefix {
+        public static func forNetwork(_ network: Network) -> Prefix {
             switch network {
             case .regtest:
                 return .lnbcrt
