@@ -47,15 +47,19 @@ public struct FiatCurrency: Currency, Equatable, Codable {
         }
     }
 
-    public func satoshis(from string: String) -> Satoshi? {
+    public func decimal(from string: String) -> Decimal? {
         let numberFormatter = NumberFormatter()
         numberFormatter.generatesDecimalNumbers = true
         numberFormatter.usesGroupingSeparator = true
         numberFormatter.locale = Locale.autoupdatingCurrent
         numberFormatter.numberStyle = .decimal
 
-        guard let fiatValue = (numberFormatter.number(from: string)) as? NSDecimalNumber else { return nil }
-        return satoshis(from: fiatValue.decimalValue)
+        return ((numberFormatter.number(from: string)) as? NSDecimalNumber)?.decimalValue
+    }
+
+    public func satoshis(from string: String) -> Satoshi? {
+        guard let fiatValue = decimal(from: string) else { return nil }
+        return satoshis(from: fiatValue)
     }
 
     public func satoshis(from fiatValue: Decimal) -> Satoshi {
