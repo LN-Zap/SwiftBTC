@@ -12,9 +12,14 @@ struct LegacyBitcoinAddress {
         case pubkeyHash = 0
         case scriptHash = 5
         case privateKey = 128
+        
         case testnetPubkeyHash = 111
         case testnetScriptHash = 196
         case testnetPrivateKey = 239
+        
+        case simnetPubkeyHash = 63
+        case simnetScriptHash = 123
+        case simnetPrivateKey = 100
     }
 
     enum AddressType {
@@ -54,6 +59,15 @@ struct LegacyBitcoinAddress {
         case .testnetPrivateKey:
             type = .privateKey
             network = .testnet
+        case .simnetPubkeyHash:
+            type = .pubkeyHash
+            network = .simnet
+        case .simnetScriptHash:
+            type = .scriptHash
+            network = .simnet
+        case .simnetPrivateKey:
+            type = .privateKey
+            network = .simnet
         }
     }
 }
