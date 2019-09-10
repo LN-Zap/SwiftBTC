@@ -12,11 +12,11 @@ struct LegacyBitcoinAddress {
         case pubkeyHash = 0
         case scriptHash = 5
         case privateKey = 128
-        
+
         case testnetPubkeyHash = 111
         case testnetScriptHash = 196
         case testnetPrivateKey = 239
-        
+
         case simnetPubkeyHash = 63
         case simnetScriptHash = 123
         case simnetPrivateKey = 100
