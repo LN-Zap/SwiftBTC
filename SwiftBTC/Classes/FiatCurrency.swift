@@ -31,7 +31,7 @@ public struct FiatCurrency: Currency, Equatable, Codable {
     }
 
     public func format(value: Decimal) -> String? {
-        format(value: value, includeSymbol: true)
+        return format(value: value, includeSymbol: true)
     }
     
     public func format(value: Decimal, includeSymbol: Bool) -> String? {
@@ -49,7 +49,7 @@ public struct FiatCurrency: Currency, Equatable, Codable {
     }
 
     public func format(satoshis: Satoshi) -> String? {
-        format(satoshis: satoshis, includeSymbol: true)
+        return format(satoshis: satoshis, includeSymbol: true)
     }
     
     public func format(satoshis: Satoshi, includeSymbol: Bool) -> String? {
