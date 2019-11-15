@@ -50,8 +50,12 @@ extension Bitcoin: Currency {
     // MARK: String formatting
 
     public func format(satoshis: Satoshi) -> String? {
+        format(satoshis: satoshis, includeSymbol: true)
+    }
+    
+    public func format(satoshis: Satoshi, includeSymbol: Bool) -> String? {
         let formatter = SatoshiFormatter(unit: self)
-        formatter.includeCurrencySymbol = true
+        formatter.includeCurrencySymbol = includeSymbol
         return formatter.string(from: satoshis)
     }
 

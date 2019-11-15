@@ -14,7 +14,8 @@ public protocol Currency {
 
     // format satoshis. (1253 -> "$0.10")
     func format(satoshis: Satoshi) -> String?
-
+    func format(satoshis: Satoshi, includeSymbol: Bool) -> String?
+    
     // string without localization stuff (10025230) -> "100252.3"
     func stringValue(satoshis: Satoshi) -> String?
 

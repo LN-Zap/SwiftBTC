@@ -31,19 +31,33 @@ public struct FiatCurrency: Currency, Equatable, Codable {
     }
 
     public func format(value: Decimal) -> String? {
+        format(value: value, includeSymbol: true)
+    }
+    
+    public func format(value: Decimal, includeSymbol: Bool) -> String? {
+        let formatter = self.currencyFormatter
+        
+        if !includeSymbol {
+            formatter.currencySymbol = ""
+        }
+        
         if value == Decimal.nan {
-            return currencyFormatter.string(from: 0)
+            return formatter.string(from: 0)
         } else {
-            return currencyFormatter.string(from: value as NSDecimalNumber)
+            return formatter.string(from: value as NSDecimalNumber)
         }
     }
 
     public func format(satoshis: Satoshi) -> String? {
+        format(satoshis: satoshis, includeSymbol: true)
+    }
+    
+    public func format(satoshis: Satoshi, includeSymbol: Bool) -> String? {
         if !satoshis.isNormal {
-            return format(value: 0)
+            return format(value: 0, includeSymbol: includeSymbol)
         } else {
             let fiatValue = CurrencyConverter.convert(amount: satoshis, from: Bitcoin.satoshi, to: Bitcoin.bitcoin) * exchangeRate
-            return format(value: fiatValue)
+            return format(value: fiatValue, includeSymbol: includeSymbol)
         }
     }
 
