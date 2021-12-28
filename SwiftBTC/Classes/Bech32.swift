@@ -1,9 +1,9 @@
 //
 //  SwiftBTC
-//
+//  MetaX AES-256 Implementation 
 //  Created by Otto Suess on 28.02.18.
 //  Copyright © 2018 Zap. All rights reserved.
-//
+//  Co-Author Aivolt on 28.12.2021. 
 
 import Foundation
 
